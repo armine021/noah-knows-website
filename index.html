@@ -225,10 +225,31 @@
     }
 
     .about-photo img,
+    .project-photo {
+      position: relative;
+    }
+
     .project-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: opacity 0.25s ease;
+    }
+
+    .project-photo .after-image {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
+
+    .project-photo:hover .after-image,
+    .project-photo:focus-within .after-image {
+      opacity: 1;
+    }
+
+    .project-photo:hover .before-image,
+    .project-photo:focus-within .before-image {
+      opacity: 0;
     }
 
     .feature-list {
@@ -362,7 +383,7 @@
           Noah Knows provides experienced garden maintenance, practical irrigation help,
           and plant care built around the light, water, wind, and wildlife needs of each space.
         </p>
-        <a class="button" href="mailto:KYLEHANDEGG@GMAIL.COM?subject=Free%20garden%20estimate">
+        <a class="button" href="mailto:YOUR-EMAIL-HERE?subject=Free%20garden%20estimate">
           Request a free estimate
         </a>
       </div>
@@ -474,15 +495,20 @@
           <article class="project-card">
             <div class="project-photo">
               <img
-                src="images/project-1.jpg"
-                alt="Water-conscious garden maintenance project"
+                class="before-image"
+                src="images/before-project-1.jpg"
+                alt="Garden before the water-conscious refresh"
+              >
+              <img
+                class="after-image"
+                src="images/after-project-1.jpg"
+                alt="Garden after the water-conscious refresh"
               >
             </div>
             <div class="project-copy">
               <h3>Water-conscious garden refresh</h3>
               <p>
-                Example caption: refreshed an established planting area with careful pruning,
-                cleanup, and lower-water replacement plants.
+                Hover over the image to compare the garden before and after the refresh.
               </p>
             </div>
           </article>
@@ -547,7 +573,7 @@
 
           <a
             class="button"
-            href="mailto:KYLEHANDEGG@GMAIL.COM?subject=Free%20garden%20estimate"
+            href="mailto:YOUR-EMAIL-HERE?subject=Free%20garden%20estimate"
           >
             Email Noah Knows
           </a>
