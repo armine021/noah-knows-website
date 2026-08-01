@@ -3,43 +3,567 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Noah Knows | Garden Care & Landscape Design</title>
+  <title>Noah Knows | Garden Maintenance in Poway</title>
   <meta
     name="description"
-    content="Garden maintenance and practical landscape design from Noah Knows."
+    content="Experienced garden maintenance, native plant care, irrigation fixes, and water-conscious landscaping in Poway, Rancho Bernardo, Scripps Poway, and surrounding San Diego County."
   >
+
+  <style>
+    :root {
+      --green-900: #1f3b2d;
+      --green-700: #35624a;
+      --green-100: #e9f1eb;
+      --cream: #f7f4ec;
+      --sand: #dfd3bd;
+      --text: #26312a;
+      --muted: #657168;
+      --white: #ffffff;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      background: rgba(247, 244, 236, 0.96);
+      border-bottom: 1px solid rgba(31, 59, 45, 0.12);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--green-900);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: var(--green-900);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(31, 59, 45, 0.72), rgba(31, 59, 45, 0.72)),
+        url("images/hero-garden.jpg") center/cover no-repeat;
+      color: var(--white);
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 88px 0;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.2;
+      color: var(--green-900);
+    }
+
+    h1 {
+      color: var(--white);
+      font-size: clamp(2.6rem, 7vw, 5.2rem);
+      margin: 0 0 18px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 0 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green-900);
+      text-decoration: none;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 2px solid var(--white);
+    }
+
+    .button:hover,
+    .button:focus {
+      background: transparent;
+      color: var(--white);
+    }
+
+    .button-dark {
+      background: var(--green-900);
+      color: var(--white);
+      border-color: var(--green-900);
+    }
+
+    .button-dark:hover,
+    .button-dark:focus {
+      background: transparent;
+      color: var(--green-900);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 36px;
+    }
+
+    .services-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(31, 59, 45, 0.1);
+      border-radius: 16px;
+      padding: 26px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .about {
+      background: var(--green-100);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-photo,
+    .project-photo {
+      background: var(--sand);
+      border-radius: 18px;
+      min-height: 320px;
+      overflow: hidden;
+    }
+
+    .about-photo img,
+    .project-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-list {
+      padding-left: 20px;
+    }
+
+    .feature-list li {
+      margin-bottom: 10px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 59, 45, 0.1);
+    }
+
+    .project-photo {
+      min-height: 230px;
+      border-radius: 0;
+    }
+
+    .project-copy {
+      padding: 22px;
+    }
+
+    .project-copy p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .service-area {
+      background: var(--green-900);
+      color: var(--white);
+    }
+
+    .service-area h2,
+    .service-area h3 {
+      color: var(--white);
+    }
+
+    .service-area-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .contact-box p {
+      margin-top: 0;
+    }
+
+    .fine-print {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    footer {
+      background: #16271e;
+      color: rgba(255, 255, 255, 0.75);
+      padding: 26px 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      .services-grid,
+      .projects-grid,
+      .about-grid,
+      .service-area-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero-content {
+        padding: 72px 0;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1>Noah Knows</h1>
-    <p>Garden care and practical landscape design.</p>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Noah Knows</a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Services</h2>
-      <p>
-        Garden maintenance, planting assistance, seasonal cleanup,
-        and small landscape improvement projects.
-      </p>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">Garden maintenance in Poway and nearby communities</p>
+        <h1>Thoughtful care for gardens that belong where they grow.</h1>
+        <p>
+          Noah Knows provides experienced garden maintenance, practical irrigation help,
+          and plant care built around the light, water, wind, and wildlife needs of each space.
+        </p>
+        <a class="button" href="mailto:KYLEHANDEGG@GMAIL.COM?subject=Free%20garden%20estimate">
+          Request a free estimate
+        </a>
+      </div>
     </section>
 
-    <section>
-      <h2>About Noah</h2>
-      <p>
-        More information about Noah’s experience and approach will go here.
-      </p>
+    <section id="services">
+      <div class="container">
+        <h2>Garden care that makes sense for the space</h2>
+        <p class="section-intro">
+          With 14 years of experience, Noah offers dependable maintenance and practical
+          problem-solving for established gardens, water-conscious landscapes, and
+          wildlife-friendly outdoor spaces.
+        </p>
+
+        <div class="services-grid">
+          <article class="card">
+            <h3>Routine garden maintenance</h3>
+            <p>
+              Ongoing care including pruning, weeding, cleanup, deadheading, plant health
+              checks, and seasonal garden upkeep.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Irrigation troubleshooting</h3>
+            <p>
+              Minor irrigation repairs, layout guidance, and adjustments to help water reach
+              the right plants without unnecessary waste.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Plant selection and replacement</h3>
+            <p>
+              Recommendations for plants suited to the site's sun, shade, wind, soil,
+              available water, and surrounding landscape.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Native and pollinator-friendly gardens</h3>
+            <p>
+              California native and water-conscious plant choices that support pollinators,
+              birds, and other local wildlife.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Pest-discouraging garden practices</h3>
+            <p>
+              Practical recommendations for reducing conditions that attract rats, mice,
+              and other unwanted pests.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Small garden improvements</h3>
+            <p>
+              Focused updates that improve plant health, appearance, and long-term
+              maintainability without redesigning the entire property.
+            </p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Past Projects</h2>
-      <p>Project photographs and descriptions will go here.</p>
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <h2>About Noah</h2>
+          <p>
+            Noah has 14 years of hands-on gardening experience and believes successful
+            landscapes begin with paying attention to the actual conditions of the site.
+            Rather than treating every yard as interchangeable, he considers water
+            availability, sun exposure, wind, soil, existing plants, and local wildlife
+            before recommending changes.
+          </p>
+          <p>
+            His approach emphasizes healthy plants, sensible maintenance, California
+            natives, and water-conscious gardens that can thrive over time.
+          </p>
+
+          <ul class="feature-list">
+            <li>Free estimates</li>
+            <li>Local, personalized service</li>
+            <li>Water-conscious and wildlife-friendly recommendations</li>
+            <li>Fourteen years of gardening experience</li>
+          </ul>
+        </div>
+
+        <div class="about-photo">
+          <img
+            src="images/noah-working.jpg"
+            alt="Noah working in a garden"
+          >
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Contact information will go here.</p>
+    <section id="projects">
+      <div class="container">
+        <h2>Selected work</h2>
+        <p class="section-intro">
+          Add three to six real project photos here. Short captions are enough:
+          what the space needed, what Noah changed, and what improved.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="images/project-1.jpg"
+                alt="Water-conscious garden maintenance project"
+              >
+            </div>
+            <div class="project-copy">
+              <h3>Water-conscious garden refresh</h3>
+              <p>
+                Example caption: refreshed an established planting area with careful pruning,
+                cleanup, and lower-water replacement plants.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="images/project-2.jpg"
+                alt="California native planting project"
+              >
+            </div>
+            <div class="project-copy">
+              <h3>California native planting</h3>
+              <p>
+                Example caption: selected plants suited to the site's light and water
+                conditions while supporting pollinators and local wildlife.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="images/project-3.jpg"
+                alt="Garden irrigation repair project"
+              >
+            </div>
+            <div class="project-copy">
+              <h3>Targeted irrigation repair</h3>
+              <p>
+                Example caption: corrected a minor irrigation problem and adjusted coverage
+                to reduce waste and better support the existing plants.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-area" id="contact">
+      <div class="container service-area-grid">
+        <div>
+          <h2>Service area</h2>
+          <p>
+            Primarily serving Poway, Rancho Bernardo, and the Scripps Poway area.
+            Other locations in San Diego County may be considered depending on the project.
+          </p>
+
+          <h3>Services not offered</h3>
+          <p class="fine-print">
+            Noah Knows does not provide whole-site irrigation installation, turf installation,
+            or artificial grass installation.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <h2>Request a free estimate</h2>
+          <p>
+            Email a short description of the garden, the location, and the kind of help
+            you are looking for.
+          </p>
+
+          <a
+            class="button"
+            href="mailto:KYLEHANDEGG@GMAIL.COM?subject=Free%20garden%20estimate"
+          >
+            Email Noah Knows
+          </a>
+
+          <p class="fine-print" style="margin-top: 18px;">
+            Email is the preferred contact method. Text messaging is not available.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Noah Knows. Garden maintenance in Poway and surrounding San Diego County.
+    </div>
+  </footer>
 </body>
 </html>
